@@ -1,24 +1,22 @@
 var person = {
-    name: 'Pedro',
-    greeting: 'Hello, ',
-    say: function() {
-        return this.greeting + this.name + '!';
-    }
+    a: 23,
+    say(){console.log("Hello World")}
+}
+
+let createDelegate = function(person) {
+
+       return function(){
+           var code = function(){
+               
+           }
+
+       }
 };
 
-createDelegate = function(person) {
 
-    (function(person){
-        createDelegate.prototype = person;
-    })(person);
-};
+var a = createDelegate(person);
 
-let test = createDelegate(person);
-
-console.log(test.name);
-
-
-
+console.log(a.a);
 
 
 

@@ -3,6 +3,14 @@
  * If an exception is thrown, return the enclosed error message
  */
 exports.callIt = function(fn) {
+
+    try {
+      return fn();
+
+    } catch (err) {
+
+      return(err.message); // something went wrong
+    }
 };
 
 /**
@@ -10,6 +18,10 @@ exports.callIt = function(fn) {
  * throw an error with an enclosed message otherwise
  */
 exports.assertEqual = function(a, b) {
+    
+    if(a === b) return true;
+
+    throw new Error("arguments are not equal")
 };
 
 /**
@@ -17,4 +29,13 @@ exports.assertEqual = function(a, b) {
  * indicating when the error occurred
  */
 exports.createCustomError = function() {
+     
+    var error = Error(message); 
+    this.name = 'CustomError'; 
+    this.message = error.message; 
+    this.stack = error.stack;
+    this.module = module; 
+
+    
 };
+

@@ -4,8 +4,6 @@
  */
 exports.createCounter = function(counter = 0) {
 
-   
-
     return {
 
          get: function(){
@@ -31,6 +29,24 @@ exports.createCounter = function(counter = 0) {
  * the module should have getAge, setAge and getName methods
  */
 exports.createPerson = function(name) {
+
+     if(!name){
+          throw new Error("oops");
+     }
+     let age = 0;
+
+     return {
+          
+          getAge(){
+               return age;
+          },
+          setAge(newAge){
+               age = newAge;
+          },
+          getName(){
+               return name;
+          }
+     }
 
 
 

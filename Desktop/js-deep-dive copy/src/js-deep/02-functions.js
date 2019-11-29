@@ -19,7 +19,7 @@ exports.speak = function(fn, obj) {
  */
 exports.stringPrefixer = function(prefix) {
 
-    return sufix =>  prefix + sufix;
+    return sufix => prefix + sufix;
 };
 
 /**
@@ -46,7 +46,7 @@ exports.createWrapperFunction = function(fn, arg1, arg2) {
  */
 exports.sumArguments = function(...args) {
 
-   return args.reduce((element, accum) => accum += element );
+   return args.reduce((element, accum) => accum += element);
 };
 
 /**

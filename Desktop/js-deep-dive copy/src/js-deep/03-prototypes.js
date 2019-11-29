@@ -4,7 +4,11 @@
  */
 exports.createDelegate = function(person) {
 
-    person.prototype = this;
+    var obj = null;
+    return function(){
+
+       return obj = Object.create(person);
+    };
 };
 
 
@@ -12,6 +16,9 @@ exports.createDelegate = function(person) {
  * Borrow and invoke the person say method on top of the company object
  */
 exports.borrowSayMethod = function(person, company) {
+
+    person.say.call(company);
+
 };
 
 /**
